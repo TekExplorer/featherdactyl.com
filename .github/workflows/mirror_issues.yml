@@ -1,0 +1,42 @@
+
+# The flow I want is as follows:
+# when [issue on publicRepo is labeled with {label}] => create new issue on privateRepo with all the same info (plus link on both)
+# when [labeled issue is updated] => update linked issue (2-way)
+# when [closed] => linked issue closes
+
+name: Copy new Issue
+
+on: 
+  issues:
+    types:
+      - labeled
+      # - opened
+      # - edited
+      # - closed
+      # - deleted
+      # - reopened
+
+# ${{ github.event.issue }}
+# ${{ github.event.issue.id }}
+# ${{ secrets.GITHUB_TOKEN }}
+env:
+  LABEL: app
+  REPO: ${{ github.repository }} # TekExplorer/featherdactyl
+
+jobs:
+  sync_issue:
+    name: Sync New Issue
+    if: contains(github.event.issue.labels.*.name, env.LABEL)
+    runs-on: ubuntu-latest
+    steps:
+    #
+        
+    - name: Create Issue
+      uses: dacbd/create-issue-action@main
+      with:
+        repo: ${{ env.REPO }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: ${{ github.event.issue.title }}
+        body: |-
+          ${{ github.event.issue.body }}
+          > Copied from ${{ github.repository }}#${{ github.event.issue.id }}
