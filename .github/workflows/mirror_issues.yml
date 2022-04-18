@@ -28,6 +28,8 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'app')
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+
     #
         
     - name: Create Issue
