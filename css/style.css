@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: rgb(0, 204, 255)
+}
+a:hover {
+	color:rgb(0, 165, 206)
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+	line-height: 1;
+	font-size: 14px;
+	background-color: rgb(51, 51, 51);
+	color: rgb(255, 255, 255);
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+h1 {
+	font-size: 30px;
+	margin: 0px 0px 30px 0px;
+}
+h2 {
+	font-size: 23px;
+	margin: 0px 0px 30px 0px;
+}
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;	 
+}
+.items {
+	padding: 50px 0;
+}
+.itemscontainer {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.itemsbody {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 20px;
+}
+.itembad {
+	position: relative;
+	margin: 0 0 15px 0;
+	/*aspect-ratio: 16 / 9;*/
+	padding: 0px 0px 56% 0px;
+}
+.itembad video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.itembad img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.itemtext {
+	font-size: 18px;
+	line-height: 150%;
+}
