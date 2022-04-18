@@ -4,7 +4,7 @@
 # when [labeled issue is updated] => update linked issue (2-way)
 # when [closed] => linked issue closes
 
-name: Copy new Issue
+name: Copy Labeled Issue
 
 on: 
   issues:
