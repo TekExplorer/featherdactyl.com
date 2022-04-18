@@ -4,7 +4,7 @@
 # when [labeled issue is updated] => update linked issue (2-way)
 # when [closed] => linked issue closes
 
-name: Copy  Issue
+name: Copy Issue
 
 on: 
   issues:
@@ -38,6 +38,6 @@ jobs:
         repo: ${{ env.REPO }}
         token: ${{ github.token }} # ${{ secrets.GITHUB_TOKEN }}
         title: ${{ github.event.issue.title }}
-        body: |-
+        body: |
           ${{ github.event.issue.body }}
-          > Copied from ${{ github.repository }}#${{ github.event.issue.id }}
+          > Copied from ${{ github.repository }}#${{ github.event.issue.number }}
