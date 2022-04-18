@@ -35,7 +35,7 @@ jobs:
       uses: dacbd/create-issue-action@main
       with:
         repo: ${{ env.REPO }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ github.token }} # ${{ secrets.GITHUB_TOKEN }}
         title: ${{ github.event.issue.title }}
         body: |-
           ${{ github.event.issue.body }}
