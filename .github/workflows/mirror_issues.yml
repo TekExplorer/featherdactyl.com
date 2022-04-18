@@ -4,7 +4,7 @@
 # when [labeled issue is updated] => update linked issue (2-way)
 # when [closed] => linked issue closes
 
-name: Copy Labeled Issue
+name: Copy  Issue
 
 on: 
   issues:
@@ -26,7 +26,7 @@ env:
 jobs:
   sync_issue:
     name: Sync New Issue
-    if: contains(github.event.issue.labels.*.name, env.LABEL)
+    if: contains(github.event.issue.labels.*.name, '${{ env.LABEL }}')
     runs-on: ubuntu-latest
     steps:
     #
