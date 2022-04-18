@@ -20,13 +20,12 @@ on:
 # ${{ github.event.issue.id }}
 # ${{ secrets.GITHUB_TOKEN }}
 env:
-  LABEL: app
   REPO: ${{ github.repository }} # TekExplorer/featherdactyl
 
 jobs:
   sync_issue:
     name: Sync New Issue
-    if: contains(github.event.issue.labels.*.name, '${{ env.LABEL }}')
+    if: contains(github.event.issue.labels.*.name, 'app')
     runs-on: ubuntu-latest
     steps:
     #
