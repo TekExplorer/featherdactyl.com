@@ -20,7 +20,7 @@ on:
 # ${{ github.event.issue.id }}
 # ${{ secrets.GITHUB_TOKEN }}
 env:
-  REPO: ${{ github.repository }} # TekExplorer/featherdactyl
+  REPO: featherdactyl.com # ${{ github.repository }} # TekExplorer/featherdactyl
 
 jobs:
   sync_issue:
@@ -35,6 +35,7 @@ jobs:
     - name: Create Issue
       uses: dacbd/create-issue-action@v1
       with:
+        owner: TekExplorer
         repo: ${{ env.REPO }}
         token: ${{ github.token }} # ${{ secrets.GITHUB_TOKEN }}
         title: ${{ github.event.issue.title }}
