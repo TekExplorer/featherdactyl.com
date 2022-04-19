@@ -20,7 +20,7 @@ on:
 # ${{ github.event.issue.id }}
 # ${{ secrets.GITHUB_TOKEN }}
 env:
-  REPO: featherdactyl.com # ${{ github.repository }} # TekExplorer/featherdactyl
+  REPO: featherdactyl # ${{ github.repository }} # TekExplorer/featherdactyl
 
 jobs:
   sync_issue:
@@ -37,7 +37,7 @@ jobs:
       with:
         owner: TekExplorer
         repo: ${{ env.REPO }}
-        token: ${{ github.token }} # ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TOKEN }}
         title: ${{ github.event.issue.title }}
         body: |
           ${{ github.event.issue.body }}
