@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+**For reference, what is the current latest app version?**
+```
+Version: <ex: v0.0.21>
+Build: <ex: 210>
+```
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
